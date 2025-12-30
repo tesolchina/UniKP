@@ -12,14 +12,32 @@
 <!-- Describe your project in brief -->
 **Feel free to contact me via email at yuhanid147@gmail.com if you encounter any issues or have any questions.**
 
-**Introduction of UniKP.**
+**Introduction of UniKP**
 
 Prediction of enzyme kinetic parameters is essential for designing and optimizing enzymes for various biotechnological and industrial applications, but the limited performance of current prediction tools on diverse tasks hinders their practical applications. Here, we introduce UniKP, a unified framework based on pretrained language models for the prediction of enzyme kinetic parameters, including enzyme turnover number (*k*<sub>cat</sub>), Michaelis constant (*K*<sub>m</sub>), and catalytic efficiency (*k*<sub>cat</sub> / *K*<sub>m</sub>), from protein sequences and substrate structures. A two-layer framework derived from UniKP (EF-UniKP) has also been proposed to allow robust *k*<sub>cat</sub> prediction in considering environmental factors, including pH and temperature. In addition, four representative re-weighting methods are systematically explored to successfully reduce the prediction error in high-value prediction tasks. We have demonstrated the application of UniKP and EF-UniKP in several enzyme discovery and directed evolution tasks, leading to the identification of new enzymes and enzyme mutants with higher activity. UniKP is a valuable tool for deciphering the mechanisms of enzyme kinetics and enables novel insights into enzyme engineering and their industrial applications.
 
-**Here is the framework of UniKP.**
+**Here is the framework of UniKP**
 <p align="center">
   <img  src="Figures/UniKP.png" >
 </p>
+
+**Applications of UniKP**
+
+This table summarizes representative progress made by uniKP in enzyme mining and evolution across diverse metabolic pathways and engineering applications, including the construction of high-efficiency biosynthesis platforms and the optimization of heterologous pathways. It provides a clear overview of the literature, enzyme types, target parameters, and applied mining/evolution strategies, serving as a quick reference for researchers. We also welcome broad collaboration with experimental biologists.
+
+| DOI | Journal | Application | Enzyme | Target Parameters | Mining / Evolution |
+|-----|---------|-------------|--------|-----------------|------------------|
+| [10.1016/j.tibtech.2025.07.016](https://doi.org/10.1016/j.tibtech.2025.07.016) | *Trends Biotechnol.* | High-efficiency NeuAc biosynthesis | N-acetylglucosamine 2-epimerase (AGE)<br>NeuAc synthase (NeuB) | kcat | Enzyme mining |
+| [10.1002/advs.202512736](https://doi.org/10.1002/advs.202512736) | *Adv Sci.* | High-efficiency chrysanthemic acid biosynthesis in E. coli | Farnesyl diphosphate synthase (ispA) | kcat / km | Enzyme mining |
+| [10.1111/jipb.70048](https://doi.org/10.1111/jipb.70048) | *J Integr Plant Biol.* | De novo biosynthesis of irregular methyl β-elemene in microbes | C-methyltransferase (C-MT)<br>Germacrene A synthase (NpGAS) | kcat / km | Enzyme mining / evolution |
+| [10.1021/acscatal.5c07044](https://doi.org/10.1021/acscatal.5c07044) | *ACS Catal.* | Stereoselective synthesis of chiral N-heterocyclic amines with nonadjacent stereocenters | ω-Transaminase (AlTA, engineered mutant M3) | kcat / km | Enzyme mining |
+| [10.1016/j.ymben.2025.11.015](https://doi.org/10.1016/j.ymben.2025.11.015) | *Metab Eng.* | Novel amino acid-derived malonyl-CoA pathways for enhanced polyketide and lipid production in Yarrowia lipolytica | L-glutamate dioxygenase (IboH)<br>Aldolase (LtaE)<br>Monoamine oxidase (MAO)<br>Malonyl-CoA reductase C-terminal (MCR-C) | kcat / km | Enzyme mining |
+| [10.1016/j.ymben.2025.01.006](https://doi.org/10.1016/j.ymben.2025.01.006) | *Metab Eng.* | De novo biosynthesis of 10-hydroxy-2-decenoic acid in Escherichia coli | CYP153AMaq | kcat / km | Enzyme evolution |
+| [10.1021/acs.jafc.5c04270](https://doi.org/10.1021/acs.jafc.5c04270) | *J Agric Food Chem.* | NLactulose production via lactose isomerization | Dictyoglomus thermophilum cellobiose 2-epimerase (DithCE) | kcat / km | Enzyme evolution |
+| [10.1016/j.ijbiomac.2025.140313](https://doi.org/10.1016/j.ijbiomac.2025.140313) | *Int J Biol Macromol.* | Enhanced ortho‑hydroxylation for salvianic acid A (SAA) biosynthesis | 4‑Hydroxyphenylacetate‑3‑hydroxylase (EcHpaB) | kcat / km | Enzyme evolution |
+| [10.3390/catal14120905](https://doi.org/10.3390/catal14120905) | *Catalysts* | GABA production from MSG at neutral pH | Glutamate decarboxylase | kcat | Enzyme evolution |
+| [10.1101/2024.09.02.610684](https://doi.org/10.1101/2024.09.02.610684) | *bioRxiv* | Comprehensive exploration of yeast underground metabolism and prediction of by-products for native and heterologous compounds | 2,057 yeast metabolic enzymes | kcat | None / Metabolic networks |
+| ... | ... | ... | ... | ... | ... |
 
 # Demo-Preview
 
