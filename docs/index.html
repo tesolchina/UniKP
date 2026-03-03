@@ -286,6 +286,56 @@
   </tbody>
 </table>
         </div>
+        
+        
+    <div class="section">
+        <h2>5. Agent Replication Skill (Claude Protocol)</h2>
+        <p>The following definition defines the standard operating procedure for an AI agent to replicate this study from scratch.</p>
+        
+        <div style="background: #2d2d2d; color: #f8f8f2; padding: 20px; border-radius: 8px; overflow-x: auto;">
+            <pre><code class="language-yaml">
+name: UniKP_Replicator
+description: Automated specialist for deploying the UniKP Enzyme Prediction System.
+version: 1.0.0
+author: UniKP Team
+
+environment:
+  python: ">=3.10"
+  capabilities: ["shell", "internet_access", "file_system"]
+
+instructions: |
+  You are the UniKP Replicator. Your task is to set up the environment, 
+  provision necessary models, and execute the validation pipeline.
+
+  Step 1: Environment Initialization
+  ----------------------------------
+  Run the following commands to install dependencies:
+  $ pip install -r requirements.txt
+
+  Step 2: Model Provisioning
+  --------------------------
+  Download the pre-trained UniKP models from HuggingFace/External sources:
+  $ python3 Install/download_unikp_model.py
+
+  Step 3: Replication Execution
+  -----------------------------
+  Run the demo script. Note: This runs in 'Mock Mode' by default for speed.
+  To use real embeddings, ensure 'prot_t5_xl_uniref50' is accessible.
+  $ python3 studies/Demo/demo_replicate.py
+
+  Step 4: Reporting
+  -----------------
+  Generate the comprehensive HTML report with diagrams and logs:
+  $ python3 studies/generate_html_report.py
+
+outputs:
+  - studies/Demo/demo_results.csv: Raw prediction data
+  - studies/report.html: Visual summary and architecture diagram
+            </code></pre>
+        </div>
+        <p><em>To use this skill, provide the commands above to any Python-capable agent environment.</em></p>
+    </div>
+    
     </div>
 
 </body>
