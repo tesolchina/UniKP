@@ -1,7 +1,7 @@
 import torch
-from build_vocab import WordVocab
-from pretrain_trfm import TrfmSeq2seq
-from utils import split
+from .build_vocab import WordVocab
+from .pretrain_trfm import TrfmSeq2seq
+from .utils import split
 import json
 from transformers import T5EncoderModel, T5Tokenizer
 import re

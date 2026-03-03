@@ -1,7 +1,7 @@
 import torch
-from build_vocab import WordVocab
-from pretrain_trfm import TrfmSeq2seq
-from utils import split
+from UniKP_lib.build_vocab import WordVocab
+from UniKP_lib.pretrain_trfm import TrfmSeq2seq
+from UniKP_lib.utils import split
 import json
 from transformers import T5EncoderModel, T5Tokenizer
 import re
@@ -29,7 +29,7 @@ def smiles_to_vec(Smiles):
     eos_index = 2
     sos_index = 3
     mask_index = 4
-    vocab = WordVocab.load_vocab('vocab.pkl')
+    vocab = WordVocab.load_vocab('assets/vocab.pkl')
     def get_inputs(sm):
         seq_len = 220
         sm = sm.split()
@@ -50,7 +50,7 @@ def smiles_to_vec(Smiles):
             x_seg.append(b)
         return torch.tensor(x_id), torch.tensor(x_seg)
     trfm = TrfmSeq2seq(len(vocab), 256, len(vocab), 4)
-    trfm.load_state_dict(torch.load('trfm_12_23000.pkl'))
+    trfm.load_state_dict(torch.load('assets/trfm_12_23000.pkl'))
     trfm.eval()
     x_split = [split(sm) for sm in Smiles]
     xid, xseg = get_array(x_split)
@@ -69,8 +69,8 @@ def Seq_to_vec(Sequence):
             zj += Sequence[i][j] + ' '
         zj += Sequence[i][-1]
         sequences_Example.append(zj)
-    tokenizer = T5Tokenizer.from_pretrained("prot_t5_xl_uniref50", do_lower_case=False)
-    model = T5EncoderModel.from_pretrained("prot_t5_xl_uniref50")
+    tokenizer = T5Tokenizer.from_pretrained("Rostlab/prot_t5_xl_uniref50", do_lower_case=False)
+    model = T5EncoderModel.from_pretrained("Rostlab/prot_t5_xl_uniref50")
     gc.collect()
     print(torch.cuda.is_available())
     # 'cuda:0' if torch.cuda.is_available() else

@@ -6,3 +6,9 @@ transformers
 SentencePiece
 scikit-learn
 openpyxl
+torch
+scipy
+xgboost
+lightgbm
+matplotlib
+markdown
